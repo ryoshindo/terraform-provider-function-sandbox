@@ -1,11 +1,11 @@
 terraform {
   required_providers {
-    hashicups = {
+    fs = {
       source = "hashicorp.com/edu/function-sandbox"
     }
   }
 }
 
-provider "hashicups" {}
+provider "fs" {}
 
-data "hashicups_coffees" "example" {}
+data "fs_sample" "example" {}
