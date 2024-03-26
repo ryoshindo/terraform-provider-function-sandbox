@@ -1,4 +1,4 @@
-module github.com/hashicorp/terraform-provider-scaffolding-framework
+module github.com/ryoshindo/terraform-provider-function-sandbox
 
 go 1.21
 
