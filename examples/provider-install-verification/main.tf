@@ -6,6 +6,8 @@ terraform {
   }
 }
 
-provider "fs" {}
+provider "fs" {
+  name = "example"
+}
 
-data "fs_sample" "example" {}
+data "fs_hello_world" "example" {}
