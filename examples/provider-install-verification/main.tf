@@ -17,3 +17,7 @@ data "fs_hello_world" "example" {
 output "message" {
   value = data.fs_hello_world.example.message
 }
+
+output "arn_build_example" {
+  value = provider::fs::arn_build("aws", "ec2", "us-east-1", "123456789012", "vpc/vpc-0e9801d129EXAMPLE")
+}

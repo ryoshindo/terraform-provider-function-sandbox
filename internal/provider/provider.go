@@ -4,11 +4,14 @@ import (
 	"context"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
+	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
+
+	tffunction "github.com/ryoshindo/terraform-provider-function-sandbox/internal/function"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -91,4 +94,10 @@ func (p *fsProvider) DataSources(_ context.Context) []func() datasource.DataSour
 // Resources defines the resources implemented in the provider.
 func (p *fsProvider) Resources(_ context.Context) []func() resource.Resource {
 	return nil
+}
+
+func (p *fsProvider) Functions(_ context.Context) []func() function.Function {
+	return []func() function.Function{
+		tffunction.NewARNBuildFunction,
+	}
 }

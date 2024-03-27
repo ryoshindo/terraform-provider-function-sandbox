@@ -3,6 +3,7 @@ module github.com/ryoshindo/terraform-provider-function-sandbox
 go 1.21
 
 require (
+	github.com/aws/aws-sdk-go-v2 v1.26.0
 	github.com/hashicorp/go-version v1.6.0
 	github.com/hashicorp/terraform-plugin-docs v0.18.0
 	github.com/hashicorp/terraform-plugin-framework v1.7.0
