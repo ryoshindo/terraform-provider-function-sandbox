@@ -99,5 +99,6 @@ func (p *fsProvider) Resources(_ context.Context) []func() resource.Resource {
 func (p *fsProvider) Functions(_ context.Context) []func() function.Function {
 	return []func() function.Function{
 		tffunction.NewARNBuildFunction,
+		tffunction.NewUlidGenerateFunction,
 	}
 }

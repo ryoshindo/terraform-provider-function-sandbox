@@ -21,3 +21,15 @@ output "message" {
 output "arn_build_example" {
   value = provider::fs::arn_build("aws", "ec2", "us-east-1", "123456789012", "vpc/vpc-0e9801d129EXAMPLE")
 }
+
+data "fs_hello_world" "arn" {
+  name = provider::fs::arn_build("aws", "ec2", "us-east-1", "123456789012", "vpc/vpc-0e9801d129EXAMPLE")
+}
+
+output "arn_message" {
+  value = data.fs_hello_world.arn.message
+}
+
+output "ulid" {
+  value = provider::fs::ulid_generate()
+}
